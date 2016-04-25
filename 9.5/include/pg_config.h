@@ -563,10 +563,10 @@
 #define PACKAGE_NAME "PostgreSQL"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "PostgreSQL 9.5.2"
+#define PACKAGE_STRING "PostgreSQL 9.5.1"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "9.5.2"
+#define PACKAGE_VERSION "9.5.1"
 
 /* Define to the name of a signed 128-bit integer type. */
 #undef PG_INT128_TYPE
@@ -575,10 +575,10 @@
 #define PG_INT64_TYPE long long int
 
 /* PostgreSQL version as a string */
-#define PG_VERSION "9.5.2"
+#define PG_VERSION "9.5.1"
 
 /* PostgreSQL version as a number */
-#define PG_VERSION_NUM 90502
+#define PG_VERSION_NUM 90501
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "postgresql"
@@ -590,7 +590,7 @@
 /* A string containing the version number, platform, and C compiler */
 #define __STRINGIFY(x) #x
 #define __STRINGIFY2(z) __STRINGIFY(z)
-#define PG_VERSION_STR "PostgreSQL 9.5.2, compiled by Visual C++ build " __STRINGIFY2(_MSC_VER) ", 64-bit"
+#define PG_VERSION_STR "PostgreSQL 9.5.1, compiled by Visual C++ build " __STRINGIFY2(_MSC_VER) ", 32-bit"
 
 /* The size of `long', as computed by sizeof. */
 #define SIZEOF_LONG 4
@@ -672,9 +672,6 @@
 /* Define to select Win32-style semaphores. */
 #define USE_WIN32_SEMAPHORES 1
 
-/* Define to 1 if `wcstombs_l' requires <xlocale.h>. */
-/* #undef WCSTOMBS_L_IN_XLOCALE */
-
 /* Number of bits in a file offset, on hosts where this is settable. */
 /* #undef _FILE_OFFSET_BITS */
 
@@ -707,8 +704,7 @@
 #define XLOG_SEG_SIZE (16 * 1024 * 1024)
 #define USE_FLOAT4_BYVAL 1
 #define FLOAT4PASSBYVAL true
-#define USE_FLOAT8_BYVAL 1
-#define FLOAT8PASSBYVAL true
+#define FLOAT8PASSBYVAL false
 #define HAVE_UUID_OSSP
 #define HAVE_UUID_H
 #define HAVE_LIBXML2

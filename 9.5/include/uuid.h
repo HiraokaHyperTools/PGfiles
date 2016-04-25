@@ -35,9 +35,7 @@
 #define uuid_create  __vendor_uuid_create
 #define uuid_compare __vendor_uuid_compare
 #include <sys/types.h>
-#ifndef _WIN32
 #include <unistd.h>
-#endif
 #undef  uuid_t
 #undef  uuid_create
 #undef  uuid_compare

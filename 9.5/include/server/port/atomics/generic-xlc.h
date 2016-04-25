@@ -47,22 +47,18 @@ pg_atomic_compare_exchange_u32_impl(volatile pg_atomic_uint32 *ptr,
 									uint32 *expected, uint32 newval)
 {
 	/*
-	 * XXX: __compare_and_swap is defined to take signed parameters, but that
-	 * shouldn't matter since we don't perform any arithmetic operations.
-	 */
-	bool		ret = __compare_and_swap((volatile int*)&ptr->value,
-										 (int *)expected, (int)newval);
-
-	/*
 	 * xlc's documentation tells us:
 	 * "If __compare_and_swap is used as a locking primitive, insert a call to
 	 * the __isync built-in function at the start of any critical sections."
-	 *
-	 * The critical section begins immediately after __compare_and_swap().
 	 */
 	__isync();
 
-	return ret;
+	/*
+	 * XXX: __compare_and_swap is defined to take signed parameters, but that
+	 * shouldn't matter since we don't perform any arithmetic operations.
+	 */
+	return __compare_and_swap((volatile int*)&ptr->value,
+							  (int *)expected, (int)newval);
 }
 
 #define PG_HAVE_ATOMIC_FETCH_ADD_U32
@@ -79,12 +75,10 @@ static inline bool
 pg_atomic_compare_exchange_u64_impl(volatile pg_atomic_uint64 *ptr,
 									uint64 *expected, uint64 newval)
 {
-	bool		ret = __compare_and_swaplp((volatile long*)&ptr->value,
-										   (long *)expected, (long)newval);
-
 	__isync();
 
-	return ret;
+	return __compare_and_swaplp((volatile long*)&ptr->value,
+								(long *)expected, (long)newval);;
 }
 
 #define PG_HAVE_ATOMIC_FETCH_ADD_U64

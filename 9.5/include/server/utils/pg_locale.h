@@ -13,7 +13,7 @@
 #define _PG_LOCALE_
 
 #include <locale.h>
-#if defined(LOCALE_T_IN_XLOCALE) || defined(WCSTOMBS_L_IN_XLOCALE)
+#ifdef LOCALE_T_IN_XLOCALE
 #include <xlocale.h>
 #endif
 

@@ -8,7 +8,7 @@
 /* #undef HAVE_PTHREAD_MUTEX_RECURSIVE */
 
 /* --prefix directory for GDAL install */
-#define GDAL_PREFIX "/d/Thirdparty/tarballs/gdal"
+#define GDAL_PREFIX "c:/pgBuild32"
 
 /* Define to 1 if you have the <assert.h> header file. */
 #define HAVE_ASSERT_H 1
@@ -97,7 +97,7 @@
 /* #undef HAVE_PNG_H */
 
 /* Define to 1 if you have the `snprintf' function. */
-/* #undef HAVE_SNPRINTF */
+#define HAVE_SNPRINTF 1
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #define HAVE_STDINT_H 1
@@ -124,7 +124,7 @@
 #define HAVE_UNISTD_H 1
 
 /* Define to 1 if you have the <values.h> header file. */
-/* #undef HAVE_VALUES_H */
+#define HAVE_VALUES_H 1
 
 /* Define to 1 if you have the `vprintf' function. */
 #define HAVE_VPRINTF 1
@@ -170,7 +170,7 @@
 #define SIZEOF_UNSIGNED_LONG 4
 
 /* The size of `void*', as computed by sizeof. */
-#define SIZEOF_VOIDP 8
+#define SIZEOF_VOIDP 4
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
@@ -182,7 +182,7 @@
 /* #undef USE_GCC_VISIBILITY_FLAG */
 
 /* Define to 1 if GCC atomic builtins are available */
-#define HAVE_GCC_ATOMIC_BUILTINS 1
+/* #undef HAVE_GCC_ATOMIC_BUILTINS */
 
 /* Define to name of 64bit fopen function */
 /* #undef VSI_FOPEN64 */
